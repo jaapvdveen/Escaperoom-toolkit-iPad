@@ -1,0 +1,71 @@
+*{
+	box-sizing:border-box;
+}
+
+/*Opmaak voor een eventuele foutmelding als de pagina niet liggend op een iPad scherm wordt bekeken */
+#noIpadLandscape{
+	background:#fee;
+	color:#666;
+	border:solid #f99;
+	border-width: 0 1px 1px;
+	position:fixed;
+	width:768px;
+	padding:5px;
+	left:50%;
+	transform:translate(-50%);
+	text-align: center;
+}
+
+#canvas{
+	background:#eee;
+	width:1024px;
+	/*Wil je de hoogte per sé vastzetten, zet dan onderstaande regel uit commentaar*/
+	/*height:768px;*/
+	position:absolute;
+	top:50%;
+	left:50%;
+	transform:translate(-50%,-50%);
+	padding:10px;
+}
+
+/*
+
+	Hieronder vind je zogenaamde "media-queries" waarmee je opmaak specifiek voor bepaalde apparaten en schermen kunt instellen.
+	Zo zie je bij de "Landscape" sectie bijvoorbeeld dat de waarschuwing (#noIpadLandscape) wordt verborgen indien de pagina op een iPad in liggend
+	formaat wordt bekeken.
+
+*/
+
+@media only screen 
+and (min-device-width: 768px) 
+and (max-device-width: 1024px) 
+and (-webkit-min-device-pixel-ratio: 1) {
+
+}
+
+/* Portrait */
+@media only screen 
+and (min-device-width: 768px) 
+and (max-device-width: 1024px) 
+and (orientation: portrait) 
+and (-webkit-min-device-pixel-ratio: 1) {
+
+	#canvas{
+		width:768px;
+		/*height:1024px;*/
+	}
+
+}
+
+/* Landscape */
+@media only screen 
+and (min-device-width: 768px) 
+and (max-device-width: 1024px) 
+and (orientation: landscape) 
+and (-webkit-min-device-pixel-ratio: 1) {
+	
+	#noIpadLandscape{
+		display:none;
+	}
+
+}
